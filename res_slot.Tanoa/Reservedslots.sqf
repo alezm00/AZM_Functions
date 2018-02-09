@@ -1,7 +1,7 @@
 /**
 	Autore: Alezm
 	Script: Reservedslots.sqf
-	Creato il: 09/02/2018																																								*/diag_log "Alezm Reserved slot script loaded";/*
+	Creato il: 09/02/2018																																																																															*/diag_log "Alezm Reserved slot script loaded";/*
 	to start the script you need to execute in the init.sqf file with this code  	[] execVM "Reservedslots.sqf";
 	then in this file you need to modify the AZM_SLOTS function adding new lines with this ["Arma3 UID", slot variable name] call AZM_RESERVED_SLOT;
 	done the scritp now is operative and you can leave your zeus slot free.
@@ -36,6 +36,7 @@ AZM_RESERVED_SLOT = {
 					sleep 1;	
 				};
 				//disableUserInput false;
+				[((name player) + " è entrato in uno slot riservato")] remoteExec ["AZM_SYSTEMCHAT"];
 				sleep .1;
 				failMission "LOSER";
 			};	
@@ -43,3 +44,8 @@ AZM_RESERVED_SLOT = {
 	};
 };
 [] call AZM_SLOTS;
+
+AZM_SYSTEMCHAT = {
+	_ciccio = _this select 0;
+	systemChat _ciccio;
+};
