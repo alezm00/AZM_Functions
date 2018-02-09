@@ -7,7 +7,6 @@
 //BIS_fnc_animateFlag      //BIS_fnc_holdActionAdd
 azm_bandiere = {
 	[band1] call azm_addactionhandlerbandiera;
-	[band2] call azm_addactionhandlerbandiera;
 };
 
 azm_variabilibandiera = {
@@ -52,7 +51,7 @@ azm_addactionhandlerbandiera = {
 	[_this select 0] spawn {
 	[] call azm_variabilibandiera;
 	[_this select 0, 0,0.01] call BIS_fnc_animateFlag;
-	[(_this select 0), nome, img1,img2, cond1,cond2,{[_this select 0] call azm_animazionibandiera},{},{[_this select 0] remoteExec ["azm_bandierasu"]}, {[_this select 0] remoteExec ["azm_bandierainterrotto"]; /*sleep temporiadd;*/[_this select 0] remoteExec ["azm_bandiere"] }, augumenti,durata,priorita,removefinish,unconscious] call BIS_fnc_holdActionAdd; 
+	[(_this select 0), nome, img1,img2, cond1,cond2,{[_this select 0] call azm_animazionibandiera},{},{[_this select 0] remoteExec ["azm_bandierasu"]}, {[_this select 0] remoteExec ["azm_bandierainterrotto"]; /*sleep temporiadd;*/ sleep 3; [_this select 0] remoteExec ["azm_bandiere"] }, augumenti,durata,priorita,removefinish,unconscious] call BIS_fnc_holdActionAdd; 
 	};
 };
 sleep 1;

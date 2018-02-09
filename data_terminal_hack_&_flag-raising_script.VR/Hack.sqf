@@ -66,6 +66,7 @@ azm_hackcompleto = {
 		testo = format ["<t color='#ff0000' size='.9'>IL TERMINALE %1 E STATO HACKERATO<br />SONO STATI PRESI TUTTI I DATI CON SUCCESSO</t>",_this select 0];
 		[testo, .8, -1, 10, 3] call BIS_fnc_dynamicText;
 		removeAllActions (_this select 0);
+		[(_this select 0), 2] call BIS_fnc_dataTerminalAnimate;
 		sleep 1;
 	};
 };
