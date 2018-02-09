@@ -36,7 +36,7 @@ AZM_RESERVED_SLOT = {
 					sleep 1;	
 				};
 				//disableUserInput false;
-				[((name player) + " è entrato in uno slot riservato")] remoteExec ["AZM_SYSTEMCHAT"];
+				[((name player) + " ha provato ad entrare in uno slot riservato")] remoteExec ["AZM_SYSTEMCHAT"];
 				sleep .1;
 				failMission "LOSER";
 			};	
