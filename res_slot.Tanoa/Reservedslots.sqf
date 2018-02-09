@@ -38,7 +38,8 @@ AZM_RESERVED_SLOT = {
 				//disableUserInput false;
 				[((name player) + " ha provato ad entrare in uno slot riservato")] remoteExec ["AZM_SYSTEMCHAT"];
 				sleep .1;
-				failMission "LOSER";
+				//failMission "LOSER";
+				["RESERVED SLOT",false,1] call BIS_fnc_endMission;
 			};	
 		};
 	};
