@@ -4,10 +4,9 @@
 	Creato il: 09/02/2018																																								*/diag_log "Alezm Reserved slot script loaded";/*
 	to start the script you need to execute in the init.sqf file with this code  	[] execVM "Reservedslots.sqf";
 	then in this file you need to modify the AZM_SLOTS function adding new lines with this ["Arma3 UID", slot variable name] call AZM_RESERVED_SLOT;
-	if you want you can add multiple uid for slot simply adding multiple lines
 	done the scritp now is operative and you can leave your zeus slot free.
 	TODO: systemChat 
-	TODO: 
+	TODO: multiple uid per slots
 
 	you can use this script on your server but just leave the credits.
 */
