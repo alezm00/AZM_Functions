@@ -42,5 +42,4 @@ AZM_RESERVED_SLOT = {
 		};
 	};
 };
-
 [] call AZM_SLOTS;
