@@ -97,6 +97,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
+test.sqf
 
 # End of https://www.gitignore.io/api/java,linux,macos,windows,executable

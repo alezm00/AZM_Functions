@@ -32,7 +32,7 @@ AZM_RESERVED_SLOT = {
 				for "_sec" from 10 to 1 step -1 do {
 					_kickvar = format ["<t size='3' color='#ff0000'>Slot riservato verrai kickato in %1 ---- %2</t>",_sec, name player];
 					titleText [_kickvar, "BLACK IN", -1,true,true];
-					playSound "beep_target"; playSound "beep_target"; playSound "beep_target";
+					playSound "FD_CP_Not_Clear_F"; playSound "FD_CP_Not_Clear_F"; playSound "FD_CP_Not_Clear_F";
 					sleep 1;	
 				};
 				//disableUserInput false;
