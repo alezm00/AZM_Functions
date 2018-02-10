@@ -47,6 +47,6 @@ AZM_RESERVED_SLOT = {
 [] call AZM_SLOTS;
 
 AZM_SYSTEMCHAT = {
-	_ciccio = _this select 0;
-	systemChat _ciccio;
+	_syschat = _this select 0;
+	systemChat _syschat;
 };
