@@ -13,7 +13,6 @@
 
 AZM_SLOTS = {
 	/*["Arma3 UID", slot variable name] call AZM_RESERVED_SLOT;*/
-	["76561198164382638", s1] call AZM_RESERVED_SLOT;
 	["76561198164382639", s1] call AZM_RESERVED_SLOT;
 };
 
