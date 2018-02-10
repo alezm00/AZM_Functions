@@ -13,6 +13,7 @@
 
 AZM_SLOTS = {
 	/*["Arma3 UID", slot variable name] call AZM_RESERVED_SLOT;*/
+	["76561198164382638", s1] call AZM_RESERVED_SLOT;
 	["76561198164382639", s1] call AZM_RESERVED_SLOT;
 };
 
@@ -40,7 +41,7 @@ AZM_RESERVED_SLOT = {
 				diag_log format ["Alezm>> %1 >> %2 ---- %3 ha provato ad entrare in uno slot riservato",time,getPlayerUID player,name player];
 				sleep .1;
 				//failMission "LOSER";
-				["RES SLOT",false,2] call BIS_fnc_endMission;
+				["RES SLOT",false,.1] call BIS_fnc_endMission;
 			};	
 		};
 	};
