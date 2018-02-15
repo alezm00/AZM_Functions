@@ -7,7 +7,7 @@
 		.##.....##.##.......##........##......##.....##
 		.##.....##.########.########.########.##.....##
 	Script: Reservedslots.sqf
-	Creato il: 09/02/2018																																																																															*/diag_log "Alezm Reserved slot script loaded";/*
+	Creato il: 09/02/2018																																																																															*/diag_log "ALEZM>>> Alezm Reserved slot script loaded";/*
 	to start the script you need to execute in the init.sqf file with this code  	[] execVM "Reservedslots.sqf";
 	then in this file you need to modify the AZM_SLOTS function adding new lines with this ["Arma3 UID", slot variable name] call AZM_RESERVED_SLOT;
 	if you want you can add a list of players UID that can bypass all blocked slots (remember the last uid must NOT have the >>>,<<< after the "" or the scirpt doesn't work)
@@ -35,14 +35,15 @@ AZM_RESERVED_SLOT = {
 		if (_slot == player) then {
 			if ((getPlayerUID player) == _uidd || (getPlayerUID player) in AZM_bypass_list) then {
 				if ((getplayeruid player) in AZM_bypass_list) then {
-					hint format ["ALEZM>>>-Benvenuto ------ADMIN------ \n%1 nello slot di \n%2-",name player, _uidd];
+					hint format ["<<<ALEZM>>>\n-Benvenuto ------ADMIN------ \n%1 nello slot di \n%2-",name player, _uidd];
 				} else {
-					hint format ["ALEZM>>>Benvenuto %1 nel tuo slot ---- %2",name player, getPlayerUID player];
+					hint format ["<<<ALEZM>>>\nBenvenuto %1 nel tuo slot.\n%2",name player, getPlayerUID player];
 				};
 			} else {
 				//titleText ["", "BLACK OUT"];
 				//sleep 5;
 				//disableUserInput true;
+				removeallweapons player;
 				for "_sec" from 10 to 1 step -1 do {
 					_kickvar = format ["<t size='3' color='#ff0000'>ALEZM>>Slot riservato verrai kickato in %1 <br/>ALEZM>> %2</t>",_sec, name player];
 					titleText [_kickvar, "BLACK IN", -1,true,true];
