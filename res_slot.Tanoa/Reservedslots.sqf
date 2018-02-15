@@ -20,6 +20,9 @@
 AZM_SLOTS = {
 	/*["Arma3 UID", slot variable name] call AZM_RESERVED_SLOT;*/
 	["76561198164382639", s1] call AZM_RESERVED_SLOT;
+	
+	
+	_bypass_list = ["",""]	
 };
 
 
@@ -27,9 +30,9 @@ AZM_RESERVED_SLOT = {
 	[_this select 0, _this select 1] spawn {
 		params ["_uidd","_slot"];
 		//hint format ["%1			%2",_uidd,_slot];	
-		waitUntil {!isNull player || player == player};
+		waitUntil {!isNull player && player == player};
 		if (_slot == player) then {
-			if ((getPlayerUID player) == _uidd) then {
+			if ((getPlayerUID player) == _uidd || (getPlayerUID player) in _bypass_list) then {
 				hint format ["Benvenuto %1 nel tuo slot ---- %2",name player, getPlayerUID player];
 			} else {
 				//titleText ["", "BLACK OUT"];
