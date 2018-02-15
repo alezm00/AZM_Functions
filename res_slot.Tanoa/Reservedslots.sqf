@@ -43,7 +43,14 @@ AZM_RESERVED_SLOT = {
 				//titleText ["", "BLACK OUT"];
 				//sleep 5;
 				//disableUserInput true;
-				removeallweapons player;
+				removeAllWeapons player;
+				removeAllItems player;
+				removeAllAssignedItems player;
+				removeUniform player;
+				removeVest player;
+				removeBackpack player;
+				removeHeadgear player;
+				removeGoggles player;
 				for "_sec" from 10 to 1 step -1 do {
 					_kickvar = format ["<t size='3' color='#ff0000'>ALEZM>>Slot riservato verrai kickato in %1 <br/>ALEZM>> %2</t>",_sec, name player];
 					titleText [_kickvar, "BLACK IN", -1,true,true];
@@ -66,3 +73,5 @@ AZM_SYSTEMCHAT = {
 	_syschat = _this select 0;
 	systemChat _syschat;
 };
+
+
