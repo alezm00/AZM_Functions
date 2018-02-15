@@ -18,13 +18,13 @@
 
 	you can use this script on your server but just leave the credits and sorry for this very bad english.
 */
-AZM_bypass_list = ["76561198164382638",""];	
+AZM_bypass_list = ["76561198164382639",""];	
 
 AZM_clear_inv = false;     //if is true then the player inventory is cleaned up, instead if is true then the scirpt simply remove the weapons.
 
 AZM_SLOTS = {
 	/*["Arma3 UID", slot variable name] call AZM_RESERVED_SLOT;*/
-	["76561198164382638", s1] call AZM_RESERVED_SLOT;
+	["76561198164382639", s1] call AZM_RESERVED_SLOT;
 
 };
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
