@@ -16,30 +16,33 @@
 
 	you can use this script on your server but just leave the credits.
 */
+AZM_bypass_list = ["76561198164382639",""];	
 
 AZM_SLOTS = {
 	/*["Arma3 UID", slot variable name] call AZM_RESERVED_SLOT;*/
 	["76561198164382639", s1] call AZM_RESERVED_SLOT;
-	
-	
-	_bypass_list = ["",""]	
+
 };
 
 
 AZM_RESERVED_SLOT = {
-	[_this select 0, _this select 1] spawn {
+	[_this select 0, _this select 1, _this select 2] spawn {
 		params ["_uidd","_slot"];
 		//hint format ["%1			%2",_uidd,_slot];	
 		waitUntil {!isNull player && player == player};
 		if (_slot == player) then {
-			if ((getPlayerUID player) == _uidd || (getPlayerUID player) in _bypass_list) then {
-				hint format ["Benvenuto %1 nel tuo slot ---- %2",name player, getPlayerUID player];
+			if ((getPlayerUID player) == _uidd || (getPlayerUID player) in AZM_bypass_list) then {
+				if ((getplayeruid player) in AZM_bypass_list) then {
+					hint format ["ALEZM>>>-Benvenuto ------ADMIN------ \n%1 nello slot di \n%2-",name player, _uidd];
+				} else {
+					hint format ["ALEZM>>>Benvenuto %1 nel tuo slot ---- %2",name player, getPlayerUID player];
+				};
 			} else {
 				//titleText ["", "BLACK OUT"];
 				//sleep 5;
 				//disableUserInput true;
 				for "_sec" from 10 to 1 step -1 do {
-					_kickvar = format ["<t size='3' color='#ff0000'>Slot riservato verrai kickato in %1 ---- %2</t>",_sec, name player];
+					_kickvar = format ["<t size='3' color='#ff0000'>ALEZM>>Slot riservato verrai kickato in %1 <br/>ALEZM>> %2</t>",_sec, name player];
 					titleText [_kickvar, "BLACK IN", -1,true,true];
 					playSound "FD_CP_Not_Clear_F"; playSound "FD_CP_Not_Clear_F"; playSound "FD_CP_Not_Clear_F";
 					sleep 1;	
