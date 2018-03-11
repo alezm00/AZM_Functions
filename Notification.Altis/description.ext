@@ -1,0 +1,26 @@
+class CfgNotifications
+{
+	class verde
+	{
+		title = "AZM Notifications green";
+		iconPicture = "";
+		iconText = "!!!";
+		description = "%1";
+		color[] = {0,0.8,0,1};
+	};
+	class rosso
+	{
+		title = "AZM Notifications red";
+		iconPicture = "";
+		iconText = "!!!";
+		description = "%1";
+		color[] = {0.9,0,0,1};
+	};
+	class neutro
+	{
+		title = "AZM Notifications neutral";
+		iconPicture = "";
+		iconText = "!!!";
+		description = "%1";
+	};
+};

@@ -9,7 +9,7 @@
 	Script: Reservedslots.sqf
 	Creato il: 09/02/2018																																																																															*/diag_log "ALEZM>>> Alezm Reserved slot script loaded";/*
 	to start the script you need to execute in the init.sqf file with this code  	[] execVM "Reservedslots.sqf";
-	then in this file you need to modify the AZM_SLOTS function adding new lines with this ["Arma3 UID", slot variable name] call AZM_RESERVED_SLOT;
+	then in this file you need to modify the AZM_SLOTS function adding new lines with this [Arma3 UID, slot variable name] call AZM_RESERVED_SLOT;
 	if you want you can add a list of players UID that can bypass all blocked slots (remember the last uid must NOT have the >>>,<<< after the "" or the scirpt doesn't work)
 	if you don't need any player bypass simply edit the variable AZM_bypass_list to [] 
 	done the script now is operative and you can leave your zeus slot free.
@@ -23,7 +23,7 @@ AZM_bypass_list = ["76561198164382639",""];
 AZM_clear_inv = false;     //if is true then the player inventory is cleaned up, instead if is true then the scirpt simply remove the weapons.
 
 AZM_SLOTS = {
-	/*["Arma3 UID", slot variable name] call AZM_RESERVED_SLOT;*/
+	/*[Arma3 UID, slot variable name] call AZM_RESERVED_SLOT;*/
 	["76561198164382639", s1] call AZM_RESERVED_SLOT;
 
 };
@@ -54,8 +54,10 @@ AZM_SLOTS = {
 AZM_RESERVED_SLOT = {
 	[_this select 0, _this select 1, _this select 2] spawn {
 		params ["_uidd","_slot"];
-		//hint format ["%1			%2",_uidd,_slot];	
+		//hint format ["%1			%2",_uidd,_slot];
+		//_uidd=_uidd;
 		waitUntil {!isNull player || player == player};
+		//_uidd = format ['"%1"',_uidd];
 		if (_slot == player) then {
 			if ((getPlayerUID player) == _uidd || (getPlayerUID player) in AZM_bypass_list) then {
 				if ((getplayeruid player) in AZM_bypass_list) then {
