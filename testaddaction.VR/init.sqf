@@ -1,1 +1,0 @@
-[] execVM "test.sqf";
