@@ -1,7 +1,7 @@
 azm_oggetti = [
 	["Land_CampingTable_F","Tavolo1"],
 	["Land_RattanTable_01_F","tavolo2"],
-	["Land_ChairPlastic_F","sedia1"]
+	["Land_ChairPlastic_F","sedia7"]
 ];
 
 player addAction ["<t color='#7FFF00'>Piazza</t>",{
